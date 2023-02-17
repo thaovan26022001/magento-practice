@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+<!--HEADER-->
+   <referenceContainer name="header.container" htmlClass="header" >
+       <referenceContainer name="header.panel.wrapper" htmlClass="header__mobile">
+         <container name="header__mobile-title" as="headerMobileTitle" label="header Mobile Title" htmlTag="div" htmlClass="header__mobile-title" >
+             <block class="Magento\Framework\View\Element\Template" name="myheader" template="Magento_Theme::myheader.phtml" ></block>
+         </container>
+      </referenceContainer>
+
+      <referenceContainer name="page.top" htmlClass="header__menu-mobi"  htmlTag="div">
+           <referenceContainer name="catalog.topnav">
+           </referenceContainer>
+           <container name="header__content" as="headerContent" label="header content" htmlTag="div" htmlClass="header__content" >
+             <block class="Magento\Framework\View\Element\Template" name="headermobi" template="Magento_Theme::header-mobi.phtml" ></block>
+           </container>
+           <container name="header__submenu" as="headerSubmenu" label="header submenu" htmlTag="div" htmlClass="header__submenu" >
+             <block class="Magento\Framework\View\Element\Template" name="headersubmenu" template="Magento_Theme::subheader.phtml" ></block>
+            </container>
+      </referenceContainer>     
+      
+      <referenceBlock name="top.links" remove="true" />
+      <referenceBlock name="minicart" remove="true" />
+      <referenceBlock name="top.search" remove="true" />
+   </referenceContainer>
+   
+   <move element="logo" destination="header__mobile-title" after="-"/>
+   <referenceBlock name="skip_to_content" remove="true" />
+   <move element="page.top" destination="header.container" />
+   <referenceBlock name="form.subscribe" remove="true"  />
+
+
+<!--FOOTER-->
+   <referenceContainer name="footer" htmlClass="row">
+
+      <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-2">
+          <arguments>
+              <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+          </arguments>
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Help , FAQ                      
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Ring Sizing                     
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Guides , Education                      
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+      </block>
+
+      <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-3">
+          <arguments>
+              <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+          </arguments>
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         About Us                      
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Delivery, Return                    
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Payment                      
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+      </block>
+
+      <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-4">
+          <arguments>
+              <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+          </arguments>
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Sustainability                       
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Benefits                    
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Contact Us                      
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+      </block>
+
+      <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-5">
+          <arguments>
+              <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+          </arguments>
+          
+          <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                         Badges                       
+                    </argument>
+                    <argument name="path" xsi:type="string">#</argument>
+                </arguments>
+          </block>
+          <block class="Magento\Framework\View\Element\Template" name="footer-heading" template="Magento_Theme::footer.phtml" ></block>  
+      </block>
+
+      <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-6">
+          <arguments>
+              <argument name="css_class" xsi:type="string">col c-12 m-12 l-4 footer__contact-logo pt-80 </argument>
+          </arguments>
+          <block class="Magento\Framework\View\Element\Template" name="footer-logo" template="Magento_Theme::footer-logo.phtml" ></block>  
+      </block>
+      
+      <referenceBlock name="footer_links" remove="true"/>
+      <referenceBlock name="copyright" remove="true"/>
+      <referenceBlock name="report.bugs" remove="true"/>
+    </referenceContainer>
+    <container name="footer-bottom" as="footerBottom" label="footer bottom" htmlTag="div" htmlClass="footer__bottom" >
+             <block class="Magento\Framework\View\Element\Template" name="footer-finish" template="Magento_Theme::footer-bottom.phtml" ></block>
+    </container>
+    <move element="footer-bottom" destination="footer-container" after="-"/>
+   
+
+
+   
+
+   
+
+
+   
+
+   </body>
+</page>
